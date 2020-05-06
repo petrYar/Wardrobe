@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProductShopClient
+namespace WardobeClient
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -31,8 +31,9 @@ namespace ProductShopClient
             string returnData = client.Login(txtLogin.Text, PasswordBox.Password);
             if (returnData != null)
             {
-                MessageBox.Show("You succesfully logined! Token:" + returnData);
-                
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.ShowDialog();
+                this.Close();
             }
             else
             {

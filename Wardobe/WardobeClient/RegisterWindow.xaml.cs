@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProductShopClient
+namespace WardobeClient
 {
     /// <summary>
     /// Логика взаимодействия для RegisterWindow.xaml
