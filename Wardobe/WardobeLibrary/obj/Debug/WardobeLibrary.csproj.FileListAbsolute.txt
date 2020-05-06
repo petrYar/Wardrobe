@@ -11,3 +11,16 @@ D:\DressingRoom\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.dll
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.pdb
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.Migrations.createddatabase.resources
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.csproj.GenerateResource.cache
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\WardobeLibrary.dll.config
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\WardobeLibrary.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\WardobeLibrary.pdb
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\EntityFramework.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\EntityFramework.xml
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.csprojAssemblyReference.cache
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.Migrations.createddatabase.resources
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.csproj.GenerateResource.cache
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.csproj.CopyComplete
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeLibrary\obj\Debug\WardobeLibrary.pdb
