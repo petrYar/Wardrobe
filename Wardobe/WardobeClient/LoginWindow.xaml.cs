@@ -28,7 +28,7 @@ namespace ProductShopClient
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-            string returnData = client.Login(txtLogin.Text, txtPassword.Text);
+            string returnData = client.Login(txtLogin.Text, PasswordBox.Password);
             if (returnData != null)
             {
                 MessageBox.Show("You succesfully logined! Token:" + returnData);

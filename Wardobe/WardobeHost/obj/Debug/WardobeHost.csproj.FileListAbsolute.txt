@@ -10,3 +10,15 @@ D:\DressingRoom\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.csprojAssemb
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.csproj.CopyComplete
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.exe
 D:\DressingRoom\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.pdb
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeHost.exe.config
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeHost.exe
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeHost.pdb
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeLibrary.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\EntityFramework.dll
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeLibrary.pdb
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\WardobeLibrary.dll.config
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\bin\Debug\EntityFramework.xml
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.csprojAssemblyReference.cache
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.csproj.CopyComplete
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.exe
+D:\Wardobe\-Wardrobe\Wardobe\WardobeHost\obj\Debug\WardobeHost.pdb
