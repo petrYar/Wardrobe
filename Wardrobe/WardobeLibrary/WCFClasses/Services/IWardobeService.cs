@@ -10,6 +10,7 @@ namespace WardobeLibrary.WCFClasses
     [ServiceContract]
     public interface IWardobeService
     {
-
+        //getting temperature of this region from the site
+        double GetTemperature();
     }
 }
