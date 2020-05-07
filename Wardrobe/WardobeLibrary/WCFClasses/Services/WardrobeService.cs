@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using WardobeLibrary.WCFClasses.Classes;
+using WardobeLibrary.Models;
 
-namespace WardobeLibrary.WCFClasses
+namespace WardrobeLibrary.WCFClasses
 {
-    public class WardobeService : IWardobeService
+    public class WardrobeService : IWardrobeService
     {
-        //getting temperature of this region from the site
-        public double GetTemperature ()
+        public double GetTemperature()
         {
             string line = "";
             WebRequest request = WebRequest.Create("https://world-weather.ru/pogoda/ukraine/rivne/");
@@ -37,6 +38,19 @@ namespace WardobeLibrary.WCFClasses
                 result = result.Trim('+');
 
             return double.Parse(result);
+        }
+        public List<Clothes> WhatToWear()
+        {
+            double temperature = GetTemperature();
+            
+            using(EFContext con = new EFContext())
+            {
+                var result = con.Clothes.Where(s => 
+                s.CategoryOf.TemperatureMin < temperature &&
+                s.CategoryOf.TemperatureMax > temperature);
+
+                return result.Select(x => new Clothes() {Name = x.Name, Color = x.Color,Description = x.Description}).ToList();
+            }
         }
     }
 }

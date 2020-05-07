@@ -69,7 +69,7 @@
     <Compile Include="WCFClasses\Services\AccountService.cs" />
     <Compile Include="WCFClasses\Services\IAccountService.cs" />
     <Compile Include="WCFClasses\Services\IWardobeService.cs" />
-    <Compile Include="WCFClasses\Services\WardobeService.cs" />
+    <Compile Include="WCFClasses\Services\WardrobeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

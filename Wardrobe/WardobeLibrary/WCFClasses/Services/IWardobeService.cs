@@ -4,13 +4,15 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using WardobeLibrary.WCFClasses.Classes;
 
-namespace WardobeLibrary.WCFClasses
+namespace WardrobeLibrary.WCFClasses
 {
     [ServiceContract]
-    public interface IWardobeService
+    public interface IWardrobeService
     {
         //getting temperature of this region from the site
         double GetTemperature();
+        List<Clothes> WhatToWear();
     }
 }
