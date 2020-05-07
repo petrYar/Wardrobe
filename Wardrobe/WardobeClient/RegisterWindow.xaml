@@ -8,9 +8,9 @@
         Title="RegisterWindow" Height="450" Width="451.727">
     <Grid Background="LightBlue">
         <Label Content="UserName"  FontSize="17" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="28" FontSize="17" Margin="30,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="50" FontSize="17" Margin="30,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
         <Label Content="Password"  FontSize="17" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="28" FontSize="17" Margin="30,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <PasswordBox x:Name="pbPassword" HorizontalAlignment="Left" Height="28" FontSize="17" Margin="30,168,0,0" VerticalAlignment="Top" Width="376"/>
         <Button Click="Button_Click" Background="Transparent"  FontSize="17" Cursor="Hand" Content="Register new Account" HorizontalAlignment="Left" Margin="117,276,0,0" VerticalAlignment="Top" Width="190" Height="49"/>
     </Grid>
 </Window>

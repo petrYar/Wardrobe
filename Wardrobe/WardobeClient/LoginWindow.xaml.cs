@@ -32,6 +32,7 @@ namespace WardobeClient
             if (returnData != null)
             {
                 MainWindow mainWindow = new MainWindow();
+                this.Hide();
                 mainWindow.ShowDialog();
                 this.Close();
             }
