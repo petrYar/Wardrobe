@@ -11,7 +11,10 @@ namespace WardobeLibrary.Models
     {
         public EFContext() : base("DbConnection")
         {
+
         }
 
+        public DbSet<ClothesDB> Clothes { get; set; }
+        public AccountDB Account { get; set; }
     }
 }
