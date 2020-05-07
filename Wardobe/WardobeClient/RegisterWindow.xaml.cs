@@ -31,7 +31,7 @@ namespace WardobeClient
             {
                 UserName = txtUserName.Text
             };
-            client.RegisterAsync(account, txtPassword.Text);
+            client.RegisterAsync(account, pbPassword.Password);
 
             this.Close();
         }
