@@ -15,6 +15,9 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+      <materialDesign:Card Padding="32" Margin="16">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
+        </materialDesign:Card>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="185*"/>
             <ColumnDefinition Width="609*"/>
