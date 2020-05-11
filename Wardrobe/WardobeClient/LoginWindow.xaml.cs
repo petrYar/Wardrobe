@@ -25,10 +25,10 @@ namespace WardobeClient
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-            string returnData = client.Login(txtLogin.Text, PasswordBox.Password);
+            string returnData =await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
             if (returnData != null)
             {
                 MainWindow mainWindow = new MainWindow();
