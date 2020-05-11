@@ -15,13 +15,11 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="185*"/>
             <ColumnDefinition Width="609*"/>
         </Grid.ColumnDefinitions>
+        
         <GroupBox Grid.Column="0" Header="Choose main color:">
             <StackPanel >
                 <RadioButton x:Name="rbYellow" Content="Yellow" Margin="10" Foreground="Yellow" />
