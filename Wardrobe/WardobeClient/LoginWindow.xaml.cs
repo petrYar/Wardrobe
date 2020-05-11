@@ -27,18 +27,25 @@ namespace WardobeClient
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-            string returnData =await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
-            if (returnData != null)
+            try
             {
-                MainWindow mainWindow = new MainWindow();
-                this.Hide();
-                mainWindow.ShowDialog();
-                this.Close();
+                WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
+                string returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
+                if (returnData != null)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    this.Hide();
+                    mainWindow.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Login or password is incorrect!");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Login or password is incorrect!");
+                MessageBox.Show(ex.Message);
             }
         }
 
