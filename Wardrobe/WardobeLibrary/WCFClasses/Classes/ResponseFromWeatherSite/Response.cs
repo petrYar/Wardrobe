@@ -10,7 +10,7 @@ namespace WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite
     public class Response
     {
         [JsonProperty("current")]
-        public Current Info { get; set; }
+        public Daily[] Info { get; set; }
         
         [JsonProperty("timezone")]
         public string Timezone { get; set; }

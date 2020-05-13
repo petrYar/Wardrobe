@@ -21,6 +21,6 @@ namespace WardobeLibrary.Models
 
         public DateTime TimeOfInfo { get; set; }
 
-        public Current Weather { get; set; }
+        public Daily[] Weather { get; set; }
     }
 }

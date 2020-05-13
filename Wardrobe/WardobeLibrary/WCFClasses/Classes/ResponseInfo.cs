@@ -13,7 +13,7 @@ namespace WardobeLibrary.WCFClasses.Classes
 
         public string City { get; set; }
 
-        public Current Weather { get; set; }
+        public Daily Weather { get; set; }
 
         public DateTime TimeOfInfo { get; set; }
     }

@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202005131812334_Reworking all that do not working. Adding new class..designer.cs">
       <DependentUpon>202005131812334_Reworking all that do not working. Adding new class..cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs" />
+    <Compile Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.designer.cs">
+      <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDB.cs" />
     <Compile Include="Models\CategoriesDB.cs" />
@@ -71,7 +75,7 @@
     <Compile Include="WCFClasses\Classes\Categories.cs" />
     <Compile Include="WCFClasses\Classes\Clothes.cs" />
     <Compile Include="WCFClasses\Classes\ResponseInfo.cs" />
-    <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Current.cs" />
+    <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Daily.cs" />
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Response.cs" />
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Weather.cs" />
     <Compile Include="WCFClasses\Services\AccountService.cs" />
@@ -86,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005131812334_Reworking all that do not working. Adding new class..resx">
       <DependentUpon>202005131812334_Reworking all that do not working. Adding new class..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.resx">
+      <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

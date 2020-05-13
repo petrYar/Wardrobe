@@ -16,7 +16,7 @@ namespace WardrobeLibrary.WCFClasses
     {
         public List<Clothes> WhatToWear()
         {
-            double temperature = Weather_GetTemperature();
+            double temperature = Weather_GetTemperature(DateTime.Now.Hour);
 
             using (EFContext con = new EFContext())
             {
@@ -106,41 +106,41 @@ namespace WardrobeLibrary.WCFClasses
             return dtDateTime;
         }
 
-        public DateTime Weather_GetDateTime()
+        public DateTime Weather_GetDateTime(int hour)
         {
             using (EFContext con = new EFContext())
             {
-                return DateTimeFromDT(con.Weather.Weather.DateTime);
+                return DateTimeFromDT(con.Weather.Weather[hour].DateTime);
             }
         }
-        public double Weather_GetTemperature()
+        public double Weather_GetTemperature(int hour)
         {
             using (EFContext con = new EFContext())
             {
-                return con.Weather.Weather.Temperature;
+                return con.Weather.Weather[hour].Temperature;
             }
         }
-        public double Weather_GetFeelsLike()
+        public double Weather_GetFeelsLike(int hour)
         {
             using (EFContext con = new EFContext())
             {
-                return con.Weather.Weather.Feels_like;
+                return con.Weather.Weather[hour].Feels_like;
             }
         }
-        public double Weather_GetWindSpeed()
+        public double Weather_GetWindSpeed(int hour)
         {
             using (EFContext con = new EFContext())
             {
-                return con.Weather.Weather.Wind_speed;
+                return con.Weather.Weather[hour].Wind_speed;
             }
         }
-        public string[] Weather_GetClouds()
+        public string[] Weather_GetClouds(int hour)
         {//Info about statement of the sky
             using (EFContext con = new EFContext())
             {
                 string[] texts = {};
                 int i = 0;
-                foreach (var item in con.Weather.Weather.WeatherInfo)
+                foreach (var item in con.Weather.Weather[hour].WeatherInfo)
                 {
                     texts[i] = item.Main;
                     i++;

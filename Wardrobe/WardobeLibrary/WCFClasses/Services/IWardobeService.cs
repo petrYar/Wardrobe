@@ -20,10 +20,10 @@ namespace WardrobeLibrary.WCFClasses
 
         DateTime DateTimeFromDT(int dt);
 
-        DateTime Weather_GetDateTime();
-        double Weather_GetTemperature();
-        double Weather_GetFeelsLike();
-        double Weather_GetWindSpeed();
-        string[] Weather_GetClouds();
+        DateTime Weather_GetDateTime(int hour);
+        double Weather_GetTemperature(int hour);
+        double Weather_GetFeelsLike(int hour);
+        double Weather_GetWindSpeed(int hour);
+        string[] Weather_GetClouds(int hour);
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite
 {
-    public class Current
+    public class Daily
     {
         [JsonProperty("dt")]
         public int DateTime { get; set; }
