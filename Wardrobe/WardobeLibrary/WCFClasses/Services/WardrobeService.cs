@@ -7,6 +7,8 @@ using System.IO;
 using System.Net;
 using WardobeLibrary.WCFClasses.Classes;
 using WardobeLibrary.Models;
+using WardobeLibrary.WCFClasses.Classes.Response;
+using Newtonsoft.Json;
 
 namespace WardrobeLibrary.WCFClasses
 {
@@ -52,15 +54,14 @@ namespace WardrobeLibrary.WCFClasses
             }
             response.Close();
 
+            Response resp = JsonConvert.DeserializeObject<Response>(line);
+            //tb4.Text = "DateTime " + resp.Current.DateTime + "\nFeels_like " + resp.Current.Feels_like +
+            //    "\nTemp " + resp.Current.Temp + "\nWeather.Main " + resp.Current.Weather[0].Main
+            //    + "\nWind_speed " + resp.Current.Wind_speed
 
-            PreResponse resp = JsonConvert.DeserializeObject<PreResponse>(line);
-            tb4.Text = "DateTime " + resp.Current.DateTime + "\nFeels_like " + resp.Current.Feels_like +
-                "\nTemp " + resp.Current.Temp + "\nWeather.Main " + resp.Current.Weather[0].Main
-                + "\nWind_speed " + resp.Current.Wind_speed
-
-                + "\nDateTime = " + DateTimeFromDT(resp.Current.DateTime).Day + "." +
-                DateTimeFromDT(resp.Current.DateTime).Month + "." +
-                DateTimeFromDT(resp.Current.DateTime).Year;
+            //    + "\nDateTime = " + DateTimeFromDT(resp.Current.DateTime).Day + "." +
+            //    DateTimeFromDT(resp.Current.DateTime).Month + "." +
+            //    DateTimeFromDT(resp.Current.DateTime).Year;
         }
 
         public string GetGeolocation()
