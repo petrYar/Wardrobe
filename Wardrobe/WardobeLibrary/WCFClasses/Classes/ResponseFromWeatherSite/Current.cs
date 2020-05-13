@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WardobeLibrary.WCFClasses.Classes.Response
+namespace WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite
 {
     public class Current
     {
@@ -13,7 +13,7 @@ namespace WardobeLibrary.WCFClasses.Classes.Response
         public int DateTime { get; set; }
 
         [JsonProperty("temp")]
-        public float Temp { get; set; }
+        public float Temperature { get; set; }
 
         [JsonProperty("feels_like")]
         public float Feels_like { get; set; }

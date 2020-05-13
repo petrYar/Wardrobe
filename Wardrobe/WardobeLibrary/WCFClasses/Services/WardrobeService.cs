@@ -7,8 +7,8 @@ using System.IO;
 using System.Net;
 using WardobeLibrary.WCFClasses.Classes;
 using WardobeLibrary.Models;
-using WardobeLibrary.WCFClasses.Classes.Response;
 using Newtonsoft.Json;
+using WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite;
 
 namespace WardrobeLibrary.WCFClasses
 {
@@ -16,7 +16,7 @@ namespace WardrobeLibrary.WCFClasses
     {
         public List<Clothes> WhatToWear()
         {
-            double temperature = GetTemperature();
+            double temperature = Weather_GetTemperature();
 
             using (EFContext con = new EFContext())
             {
@@ -29,41 +29,6 @@ namespace WardrobeLibrary.WCFClasses
         }
 
         #region Response
-        public void FASD()
-        {
-            string geolocation = GetGeolocation();
-            string latitude = GetLatitude(geolocation);
-            string longitude = GetLongitude(geolocation);
-            string line = string.Empty;
-            string id = "024fcef23bd432769b6fb06ff0d2f069";//need to rework
-
-            //current   Minute forecast for 1 hour
-            //minutely  Hourly forecast for 48 hours
-            //hourly    Daily forecast for 7 days
-            //daily     Historical weather data for 5 previous days
-            string part = "hourly";
-
-            WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/onecall?lat={latitude}&lon={longitude}&exclude={part}&appid={id}&units=metric");
-            WebResponse response = request.GetResponse();
-            using (Stream stream = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    line = reader.ReadToEnd();
-                }
-            }
-            response.Close();
-
-            Response resp = JsonConvert.DeserializeObject<Response>(line);
-            //tb4.Text = "DateTime " + resp.Current.DateTime + "\nFeels_like " + resp.Current.Feels_like +
-            //    "\nTemp " + resp.Current.Temp + "\nWeather.Main " + resp.Current.Weather[0].Main
-            //    + "\nWind_speed " + resp.Current.Wind_speed
-
-            //    + "\nDateTime = " + DateTimeFromDT(resp.Current.DateTime).Day + "." +
-            //    DateTimeFromDT(resp.Current.DateTime).Month + "." +
-            //    DateTimeFromDT(resp.Current.DateTime).Year;
-        }
-
         public string GetGeolocation()
         {
             string line = "";
@@ -99,19 +64,20 @@ namespace WardrobeLibrary.WCFClasses
 
             return text2[0];
         }
-
-        public DateTime DateTimeFromDT(double dt)
+        public void GetAndSetResponse(string id)
         {
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(dt).ToLocalTime();
-            return dtDateTime;
-        }
-        #endregion
+            string geolocation = GetGeolocation();
+            string latitude = GetLatitude(geolocation);
+            string longitude = GetLongitude(geolocation);
+            string line = string.Empty;
 
-        public double GetTemperature()
-        {
-            string line = "";
-            WebRequest request = WebRequest.Create("https://world-weather.ru/pogoda/ukraine/rivne/");
+            //current   Minute forecast for 1 hour
+            //minutely  Hourly forecast for 48 hours
+            //hourly    Daily forecast for 7 days
+            //daily     Historical weather data for 5 previous days
+            string part = "hourly";
+
+            WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/onecall?lat={latitude}&lon={longitude}&exclude={part}&appid={id}&units=metric");
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())
             {
@@ -122,18 +88,65 @@ namespace WardrobeLibrary.WCFClasses
             }
             response.Close();
 
-            string[] array = { "<div id=\"weather-now-number\">" };
-            string[] text = line.Split(array, StringSplitOptions.RemoveEmptyEntries);
+            using (EFContext con = new EFContext())
+            {
+                con.Weather.TimeOfInfo = DateTime.Now;
+                Response resp = JsonConvert.DeserializeObject<Response>(line);
+                con.Weather.City = resp.Timezone.Split('/')[1];
+                con.Weather.Region = resp.Timezone.Split('/')[0];
+                con.Weather.Weather = resp.Info;
+            }
+        }
+        #endregion
 
-            string[] array2 = { "<span>" };
-            string[] text2 = text[1].Split(array2, StringSplitOptions.RemoveEmptyEntries);
+        public DateTime DateTimeFromDT(int dt)
+        {
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(dt).ToLocalTime();
+            return dtDateTime;
+        }
 
-            string result = text2[0];
-
-            if (result[0] == '+')
-                result = result.Trim('+');
-
-            return double.Parse(result);
+        public DateTime Weather_GetDateTime()
+        {
+            using (EFContext con = new EFContext())
+            {
+                return DateTimeFromDT(con.Weather.Weather.DateTime);
+            }
+        }
+        public double Weather_GetTemperature()
+        {
+            using (EFContext con = new EFContext())
+            {
+                return con.Weather.Weather.Temperature;
+            }
+        }
+        public double Weather_GetFeelsLike()
+        {
+            using (EFContext con = new EFContext())
+            {
+                return con.Weather.Weather.Feels_like;
+            }
+        }
+        public double Weather_GetWindSpeed()
+        {
+            using (EFContext con = new EFContext())
+            {
+                return con.Weather.Weather.Wind_speed;
+            }
+        }
+        public string[] Weather_GetClouds()
+        {//Info about statement of the sky
+            using (EFContext con = new EFContext())
+            {
+                string[] texts = {};
+                int i = 0;
+                foreach (var item in con.Weather.Weather.WeatherInfo)
+                {
+                    texts[i] = item.Main;
+                    i++;
+                }
+                return texts;
+            }
         }
     }
 }

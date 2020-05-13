@@ -25,7 +25,7 @@ namespace WardobeLibrary.WCFClasses
 
         public void Register(Account account, string password)
         {
-            account.IdGuid = Guid.NewGuid().ToString();
+            //account.IdGuid = Guid.NewGuid().ToString();
             account.Password = password;
             this.Accounts.Add(account);
         }

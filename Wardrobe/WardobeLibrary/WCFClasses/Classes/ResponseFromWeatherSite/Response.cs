@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WardobeLibrary.WCFClasses.Classes.Response
+namespace WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite
 {
     public class Response
     {
         [JsonProperty("current")]
         public Current Info { get; set; }
+        
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
     }
 }

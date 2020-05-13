@@ -8,7 +8,7 @@ namespace WardobeLibrary.WCFClasses.Classes
 {
     public class Categories
     {
-        private int id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

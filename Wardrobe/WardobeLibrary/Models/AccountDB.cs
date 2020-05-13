@@ -12,17 +12,11 @@ namespace WardobeLibrary.Models
     public class AccountDB
     {
         [Key]
-        private int id;
-
-        public string IdGuid { get; set; }
+        public int Id { get; set; }
 
         public string UserName { get; private set; }
 
         public string Password { get; set; }
-
-        private decimal _money;
-
-        public decimal Money { get => _money; private set => this._money = value; }
 
         public string Token { get; set; }
 

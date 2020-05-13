@@ -16,5 +16,6 @@ namespace WardobeLibrary.Models
 
         public DbSet<ClothesDB> Clothes { get; set; }
         public AccountDB Account { get; set; }
+        public WeatherDB Weather { get; set; }
     }
 }

@@ -7,13 +7,13 @@ namespace WardobeLibrary.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class createddatabase : IMigrationMetadata
+    public sealed partial class ReworkingallthatdonotworkingAddingnewclass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(createddatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ReworkingallthatdonotworkingAddingnewclass));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005041712101_created database"; }
+            get { return "202005131812334_Reworking all that do not working. Adding new class."; }
         }
         
         string IMigrationMetadata.Source

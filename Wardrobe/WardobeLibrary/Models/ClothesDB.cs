@@ -12,7 +12,7 @@ namespace WardobeLibrary.Models
     public class ClothesDB
     {
         [Key]
-        private int id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -24,7 +24,6 @@ namespace WardobeLibrary.Models
         public int IdAccount { get; set; }
         [ForeignKey("CategoryOf")]
         public int IdCategory { get; set; }
-
 
         public virtual AccountDB AccountOf { get; set; }
         public virtual CategoriesDB CategoryOf { get; set; }
