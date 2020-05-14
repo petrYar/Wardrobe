@@ -28,8 +28,8 @@ namespace WardobeClient
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-            string returnData = client.Login(txtLogin.Text, PasswordBox.Password);
-            if (returnData != null)
+            bool returnData = client.Login(txtLogin.Text, PasswordBox.Password);
+            if (returnData == true)
             {
                 MainWindow mainWindow = new MainWindow();
                 this.Hide();
