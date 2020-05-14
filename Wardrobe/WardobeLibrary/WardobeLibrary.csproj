@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,40 +56,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202005041712101_created database.cs" />
-    <Compile Include="Migrations\202005041712101_created database.designer.cs">
-      <DependentUpon>202005041712101_created database.cs</DependentUpon>
+    <Compile Include="Migrations\202005131812334_Reworking all that do not working. Adding new class..cs" />
+    <Compile Include="Migrations\202005131812334_Reworking all that do not working. Adding new class..designer.cs">
+      <DependentUpon>202005131812334_Reworking all that do not working. Adding new class..cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005131643507_edit table.cs" />
-    <Compile Include="Migrations\202005131643507_edit table.designer.cs">
-      <DependentUpon>202005131643507_edit table.cs</DependentUpon>
+    <Compile Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs" />
+    <Compile Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.designer.cs">
+      <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005121801126_edited classe.cs" />
+    <Compile Include="Migrations\202005121801126_edited classe.designer.cs">
+      <DependentUpon>202005121801126_edited classe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005131649421_edited tables.cs" />
+    <Compile Include="Migrations\202005131649421_edited tables.designer.cs">
+      <DependentUpon>202005131649421_edited tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005141256218_asf.cs" />
+    <Compile Include="Migrations\202005141256218_asf.designer.cs">
+      <DependentUpon>202005141256218_asf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005141331170_removed Required.cs" />
+    <Compile Include="Migrations\202005141331170_removed Required.designer.cs">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDB.cs" />
     <Compile Include="Models\CategoriesDB.cs" />
     <Compile Include="Models\ClothesDB.cs" />
     <Compile Include="Models\EFContext.cs" />
+    <Compile Include="Models\WeatherDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WCFClasses\Classes\Account.cs" />
     <Compile Include="WCFClasses\Classes\Categories.cs" />
     <Compile Include="WCFClasses\Classes\Clothes.cs" />
-    <Compile Include="WCFClasses\Services\Service.cs" />
+    <Compile Include="WCFClasses\Classes\ResponseInfo.cs" />
+    <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Daily.cs" />
+    <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Response.cs" />
+    <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Weather.cs" />
+    <Compile Include="WCFClasses\Services\AccountService.cs" />
     <Compile Include="WCFClasses\Services\IAccountContract.cs" />
     <Compile Include="WCFClasses\Services\IWardobeContract.cs" />
+    <Compile Include="WCFClasses\Services\WardrobeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005041712101_created database.resx">
-      <DependentUpon>202005041712101_created database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005131812334_Reworking all that do not working. Adding new class..resx">
+      <DependentUpon>202005131812334_Reworking all that do not working. Adding new class..cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005131643507_edit table.resx">
-      <DependentUpon>202005131643507_edit table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.resx">
+      <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005121801126_edited classe.resx">
+      <DependentUpon>202005121801126_edited classe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131649421_edited tables.resx">
+      <DependentUpon>202005131649421_edited tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141256218_asf.resx">
+      <DependentUpon>202005141256218_asf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141331170_removed Required.resx">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

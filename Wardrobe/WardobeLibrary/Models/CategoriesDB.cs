@@ -14,9 +14,11 @@ namespace WardobeLibrary.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public double TemperatureMin { get; set; }
+
         public double TemperatureMax { get; set; }
 
         [ForeignKey("ClothesOf")]

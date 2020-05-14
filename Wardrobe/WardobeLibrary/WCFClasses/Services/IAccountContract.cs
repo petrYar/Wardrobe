@@ -11,10 +11,10 @@ namespace WardobeLibrary.WCFClasses
     public interface IAccountContract
     {
         [OperationContract]
-        string Login(string login, string password);
+        bool Login(string login, string password);
 
         [OperationContract]
-        void Register(Account account, string password);
+        bool Register(Account account,string password);
 
         [OperationContract]
         Account GetInfo(string token);

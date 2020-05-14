@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class createddatabase : DbMigration
+    public partial class RenamingCurrenttoDailyNowweatherisforeachhournotforcurrenttime : DbMigration
     {
         public override void Up()
         {

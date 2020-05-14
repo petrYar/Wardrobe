@@ -11,20 +11,13 @@ namespace WardobeLibrary.WCFClasses
     [DataContract]
     public class Account
     {
-        private int id;
-
-        public string IdGuid { get; set; }
-
+        public int Id { get; set; }
         [DataMember]
-        public string UserName { get; private set; }
-
+        public string UserName { get; set; }
         public string Password { get; set; }
 
-        private decimal _money;
-
-        [DataMember]
-        public decimal Money { get => _money; private set => this._money = value; }
-
         public string Token { get; set; }
+        public List<string> Clothes { get; set; }
+
     }
 }

@@ -23,9 +23,6 @@ namespace WardobeClient.Proxy {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal MoneyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UserNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -35,19 +32,6 @@ namespace WardobeClient.Proxy {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Money {
-            get {
-                return this.MoneyField;
-            }
-            set {
-                if ((this.MoneyField.Equals(value) != true)) {
-                    this.MoneyField = value;
-                    this.RaisePropertyChanged("Money");
-                }
             }
         }
         
@@ -207,19 +191,19 @@ namespace WardobeClient.Proxy {
                 base(binding, remoteAddress) {
         }
         
-        public string Login(string login1, string password) {
+        public bool Login(string login1, string password) {
             return base.Channel.Login(login1, password);
         }
         
-        public System.Threading.Tasks.Task<string> LoginAsync(string login, string password) {
+        public System.Threading.Tasks.Task<bool> LoginAsync(string login, string password) {
             return base.Channel.LoginAsync(login, password);
         }
         
-        public void Register(WardobeClient.Proxy.Account account, string password) {
-            base.Channel.Register(account, password);
+        public bool Register(WardobeClient.Proxy.Account account, string password) {
+            return base.Channel.Register(account, password);
         }
         
-        public System.Threading.Tasks.Task RegisterAsync(WardobeClient.Proxy.Account account, string password) {
+        public System.Threading.Tasks.Task<bool> RegisterAsync(WardobeClient.Proxy.Account account, string password) {
             return base.Channel.RegisterAsync(account, password);
         }
         
