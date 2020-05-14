@@ -31,7 +31,7 @@ namespace WardobeClient
             {
                 WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
                 string returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
-                if (returnData != null)
+                if (returnData == true)
                 {
                     MainWindow mainWindow = new MainWindow();
                     this.Hide();

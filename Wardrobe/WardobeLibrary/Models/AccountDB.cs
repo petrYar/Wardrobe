@@ -12,23 +12,18 @@ namespace WardobeLibrary.Models
     public class AccountDB
     {
         [Key]
-        private int id;
+        public int Id { get; set; }
 
-        public string IdGuid { get; set; }
+        [Required]
+        public string UserName { get; set; }
 
-        public string UserName { get; private set; }
-
+        [Required]
         public string Password { get; set; }
-
-        private decimal _money;
-
-        public decimal Money { get => _money; private set => this._money = value; }
 
         public string Token { get; set; }
 
-        [ForeignKey("ClothesOf")]
-        public int IdClothes { get; set; }
-
+        //[ForeignKey("ClothesOf")]
+        //public int IdClothes { get; set; }
 
         public virtual ICollection<ClothesDB> ClothesOf { get; set; }
     }

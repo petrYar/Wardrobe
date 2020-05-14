@@ -12,21 +12,23 @@ namespace WardobeLibrary.Models
     public class ClothesDB
     {
         [Key]
-        private int id { get; set; }
+        public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
-
+        [Required]
         public string Color { get; set; }
 
         public string Description { get; set; }
 
         [ForeignKey("AccountOf")]
         public int IdAccount { get; set; }
+
         [ForeignKey("CategoryOf")]
         public int IdCategory { get; set; }
 
-
         public virtual AccountDB AccountOf { get; set; }
+
         public virtual CategoriesDB CategoryOf { get; set; }
     }
 }

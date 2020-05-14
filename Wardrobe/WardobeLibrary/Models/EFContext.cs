@@ -15,6 +15,9 @@ namespace WardobeLibrary.Models
         }
 
         public DbSet<ClothesDB> Clothes { get; set; }
-        public AccountDB Account { get; set; }
+
+        public DbSet<AccountDB> Accounts { get; set; }
+
+        public DbSet<CategoriesDB> Categories { get; set; }
     }
 }
