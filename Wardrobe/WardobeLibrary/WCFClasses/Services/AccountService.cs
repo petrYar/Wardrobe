@@ -35,11 +35,6 @@ namespace WardobeLibrary.WCFClasses
 
         public bool Register(Account account, string password)
         {
-<<<<<<< HEAD
-            //account.IdGuid = Guid.NewGuid().ToString();
-            account.Password = password;
-            this.Accounts.Add(account);
-=======
             using (var context = new EFContext())
             {
                 if (context.Accounts.FirstOrDefault(x => x.Password == account.Password && x.UserName == account.UserName) != null)
@@ -52,7 +47,6 @@ namespace WardobeLibrary.WCFClasses
                 context.SaveChanges();
                 return true;
             }
->>>>>>> develop
         }
 
         public bool Login(string login, string password)

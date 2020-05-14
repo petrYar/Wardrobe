@@ -14,12 +14,8 @@ namespace WardobeLibrary.Models
         [Key]
         public int Id { get; set; }
 
-<<<<<<< HEAD
-        public string UserName { get; private set; }
-=======
         [Required]
         public string UserName { get; set; }
->>>>>>> develop
 
         [Required]
         public string Password { get; set; }

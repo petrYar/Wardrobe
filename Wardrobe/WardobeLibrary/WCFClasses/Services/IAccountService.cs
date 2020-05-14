@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WardobeLibrary.WCFClasses.Services
+namespace WardobeLibrary.WCFClasses
 {
     [ServiceContract]
     public interface IAccountService
