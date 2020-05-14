@@ -30,7 +30,7 @@ namespace WardobeClient
             try
             {
                 WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-                string returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
+                bool returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
                 if (returnData == true)
                 {
                     MainWindow mainWindow = new MainWindow();
