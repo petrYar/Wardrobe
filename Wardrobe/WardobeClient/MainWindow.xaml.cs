@@ -28,9 +28,9 @@ namespace WardobeClient
 
         private async void btnPickUpClothes_Click(object sender, RoutedEventArgs e)
         {
-            Proxy.WardobeContractClient wardobeClient = new Proxy.WardobeContractClient();
-            var clothesFromServer = await wardobeClient.GetClothesAsync();
-            dgClothes.ItemsSource = clothesFromServer;
+            //Proxy.WardobeContractClient wardobeClient = new Proxy.WardobeContractClient();
+            //var clothesFromServer = await wardobeClient.GetClothesAsync();
+            //dgClothes.ItemsSource = clothesFromServer;
 
         }
     }

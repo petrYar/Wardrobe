@@ -11,7 +11,7 @@ namespace WardobeLibrary.WCFClasses
     public interface IAccountContract
     {
         [OperationContract]
-        bool Login(string login, string password);
+        string Login(string login, string password);
 
         [OperationContract]
         bool Register(Account account,string password);

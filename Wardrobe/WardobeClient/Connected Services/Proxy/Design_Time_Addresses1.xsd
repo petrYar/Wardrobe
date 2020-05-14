@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses" />
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses.Classes" />
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
@@ -13,7 +12,7 @@
   <xs:element name="LoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="LoginResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,18 +55,6 @@
   <xs:element name="DisconnectResponse">
     <xs:complexType>
       <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetClothes">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetClothesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses.Classes" minOccurs="0" name="GetClothesResult" nillable="true" type="q3:ArrayOfClothes" />
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

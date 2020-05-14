@@ -22,12 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Design_Time_Addresses2.xsd" MetadataType="Schema" ID="aaa32dac-69ca-4ade-8a47-664a6b51bbc3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" />
-    <MetadataFile FileName="Design_Time_Addresses3.xsd" MetadataType="Schema" ID="9073b0f2-a209-47f6-ba55-4339e4536a86" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd3" />
-    <MetadataFile FileName="Design_Time_Addresses.xsd" MetadataType="Schema" ID="2e6cfcb4-aded-4fc2-98e9-d406574a68f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd2" />
-    <MetadataFile FileName="Design_Time_Addresses.disco" MetadataType="Disco" ID="381f244a-b261-4fe1-bbb4-82b5c7722482" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?disco" />
     <MetadataFile FileName="AccountService.wsdl" MetadataType="Wsdl" ID="e74d86c8-09b5-418f-b514-522b9946e247" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?wsdl" />
+    <MetadataFile FileName="Design_Time_Addresses.xsd" MetadataType="Schema" ID="2e6cfcb4-aded-4fc2-98e9-d406574a68f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd2" />
     <MetadataFile FileName="Design_Time_Addresses1.xsd" MetadataType="Schema" ID="7f6469bd-79cd-4aa5-9e34-bd4740447d68" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd0" />
+    <MetadataFile FileName="Design_Time_Addresses2.xsd" MetadataType="Schema" ID="aaa32dac-69ca-4ade-8a47-664a6b51bbc3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" />
+    <MetadataFile FileName="Design_Time_Addresses.disco" MetadataType="Disco" ID="381f244a-b261-4fe1-bbb4-82b5c7722482" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
