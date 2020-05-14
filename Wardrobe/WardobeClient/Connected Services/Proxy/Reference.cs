@@ -59,66 +59,66 @@ namespace WardobeClient.Proxy {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IAccountService")]
-    public interface IAccountService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IAccountContract")]
+    public interface IAccountContract {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
-        bool Login([System.ServiceModel.MessageParameterAttribute(Name="login")] string login1, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Login", ReplyAction="http://tempuri.org/IAccountContract/LoginResponse")]
+        string Login([System.ServiceModel.MessageParameterAttribute(Name="login")] string login1, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string login, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Login", ReplyAction="http://tempuri.org/IAccountContract/LoginResponse")]
+        System.Threading.Tasks.Task<string> LoginAsync(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Register", ReplyAction="http://tempuri.org/IAccountService/RegisterResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Register", ReplyAction="http://tempuri.org/IAccountContract/RegisterResponse")]
         bool Register(WardobeClient.Proxy.Account account, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Register", ReplyAction="http://tempuri.org/IAccountService/RegisterResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Register", ReplyAction="http://tempuri.org/IAccountContract/RegisterResponse")]
         System.Threading.Tasks.Task<bool> RegisterAsync(WardobeClient.Proxy.Account account, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetInfo", ReplyAction="http://tempuri.org/IAccountService/GetInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/GetInfo", ReplyAction="http://tempuri.org/IAccountContract/GetInfoResponse")]
         WardobeClient.Proxy.Account GetInfo(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetInfo", ReplyAction="http://tempuri.org/IAccountService/GetInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/GetInfo", ReplyAction="http://tempuri.org/IAccountContract/GetInfoResponse")]
         System.Threading.Tasks.Task<WardobeClient.Proxy.Account> GetInfoAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Disconnect", ReplyAction="http://tempuri.org/IAccountService/DisconnectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Disconnect", ReplyAction="http://tempuri.org/IAccountContract/DisconnectResponse")]
         void Disconnect(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Disconnect", ReplyAction="http://tempuri.org/IAccountService/DisconnectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Disconnect", ReplyAction="http://tempuri.org/IAccountContract/DisconnectResponse")]
         System.Threading.Tasks.Task DisconnectAsync(string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAccountServiceChannel : WardobeClient.Proxy.IAccountService, System.ServiceModel.IClientChannel {
+    public interface IAccountContractChannel : WardobeClient.Proxy.IAccountContract, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AccountServiceClient : System.ServiceModel.ClientBase<WardobeClient.Proxy.IAccountService>, WardobeClient.Proxy.IAccountService {
+    public partial class AccountContractClient : System.ServiceModel.ClientBase<WardobeClient.Proxy.IAccountContract>, WardobeClient.Proxy.IAccountContract {
         
-        public AccountServiceClient() {
+        public AccountContractClient() {
         }
         
-        public AccountServiceClient(string endpointConfigurationName) : 
+        public AccountContractClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public AccountServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public AccountContractClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AccountServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public AccountContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AccountServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public AccountContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public bool Login(string login1, string password) {
+        public string Login(string login1, string password) {
             return base.Channel.Login(login1, password);
         }
         
-        public System.Threading.Tasks.Task<bool> LoginAsync(string login, string password) {
+        public System.Threading.Tasks.Task<string> LoginAsync(string login, string password) {
             return base.Channel.LoginAsync(login, password);
         }
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,10 +30,16 @@ namespace WardobeClient
         {
             try
             {
-                WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
-                bool returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
-                if (returnData == true)
+                WardobeClient.Proxy.AccountContractClient client = new WardobeClient.Proxy.AccountContractClient();
+                string returnData = await client.LoginAsync(txtLogin.Text, PasswordBox.Password);
+                if (!string.IsNullOrEmpty(returnData))
                 {
+                    // Write token in debug folder
+                    using (StreamWriter sw = File.CreateText("token.txt"))
+                    {
+                        sw.WriteLine(returnData);
+                    }
+
                     MainWindow mainWindow = new MainWindow();
                     this.Hide();
                     mainWindow.ShowDialog();

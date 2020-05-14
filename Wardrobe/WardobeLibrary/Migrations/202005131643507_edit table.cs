@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ReworkingallthatdonotworkingAddingnewclass : DbMigration
+    public partial class edittable : DbMigration
     {
         public override void Up()
         {
@@ -29,8 +29,10 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        IdGuid = c.String(),
                         UserName = c.String(),
                         Password = c.String(),
+                        Money = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Token = c.String(),
                         IdClothes = c.Int(nullable: false),
                     })

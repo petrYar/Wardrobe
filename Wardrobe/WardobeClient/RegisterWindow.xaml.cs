@@ -26,7 +26,7 @@ namespace WardobeClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
+            WardobeClient.Proxy.AccountContractClient client = new WardobeClient.Proxy.AccountContractClient();
             WardobeClient.Proxy.Account account = new WardobeClient.Proxy.Account()
             {
                 UserName = txtUserName.Text,

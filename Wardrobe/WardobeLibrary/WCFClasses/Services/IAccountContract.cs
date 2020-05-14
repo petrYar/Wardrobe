@@ -5,13 +5,13 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WardobeLibrary.WCFClasses.Services
+namespace WardobeLibrary.WCFClasses
 {
     [ServiceContract]
-    public interface IAccountService
+    public interface IAccountContract
     {
         [OperationContract]
-        bool Login(string login, string password);
+        string Login(string login, string password);
 
         [OperationContract]
         bool Register(Account account,string password);

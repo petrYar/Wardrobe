@@ -7,13 +7,13 @@ namespace WardobeLibrary.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class ReworkingallthatdonotworkingAddingnewclass : IMigrationMetadata
+    public sealed partial class edittable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ReworkingallthatdonotworkingAddingnewclass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(edittable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005131812334_Reworking all that do not working. Adding new class."; }
+            get { return "202005131643507_edit table"; }
         }
         
         string IMigrationMetadata.Source
