@@ -95,15 +95,9 @@
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Response.cs" />
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Weather.cs" />
     <Compile Include="WCFClasses\Services\AccountService.cs" />
-<<<<<<< HEAD
     <Compile Include="WCFClasses\Services\IAccountService.cs" />
     <Compile Include="WCFClasses\Services\IWardobeService.cs" />
     <Compile Include="WCFClasses\Services\WardrobeService.cs" />
-=======
-    <Compile Include="WCFClasses\Services\IAccountContract.cs" />
-    <Compile Include="WCFClasses\Services\IWardobeContract.cs" />
-    <Compile Include="WCFClasses\Services\WardobeService.cs" />
->>>>>>> develop
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
