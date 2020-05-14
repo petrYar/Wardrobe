@@ -12,7 +12,7 @@ namespace WardobeLibrary.Models
     public class AccountDB
     {
         [Key]
-        private int id;
+        public int Id { get; set; }
 
         public string IdGuid { get; set; }
 

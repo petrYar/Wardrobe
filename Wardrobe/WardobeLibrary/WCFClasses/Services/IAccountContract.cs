@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WardobeLibrary.WCFClasses
 {
     [ServiceContract]
-    public interface IAccountService
+    public interface IAccountContract
     {
         [OperationContract]
         string Login(string login, string password);

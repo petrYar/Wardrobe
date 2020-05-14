@@ -57,6 +57,10 @@
     <Compile Include="Migrations\202005041712101_created database.designer.cs">
       <DependentUpon>202005041712101_created database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005131643507_edit table.cs" />
+    <Compile Include="Migrations\202005131643507_edit table.designer.cs">
+      <DependentUpon>202005131643507_edit table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDB.cs" />
     <Compile Include="Models\CategoriesDB.cs" />
@@ -66,10 +70,9 @@
     <Compile Include="WCFClasses\Classes\Account.cs" />
     <Compile Include="WCFClasses\Classes\Categories.cs" />
     <Compile Include="WCFClasses\Classes\Clothes.cs" />
-    <Compile Include="WCFClasses\Services\AccountService.cs" />
-    <Compile Include="WCFClasses\Services\IAccountService.cs" />
-    <Compile Include="WCFClasses\Services\IWardobeService.cs" />
-    <Compile Include="WCFClasses\Services\WardobeService.cs" />
+    <Compile Include="WCFClasses\Services\Service.cs" />
+    <Compile Include="WCFClasses\Services\IAccountContract.cs" />
+    <Compile Include="WCFClasses\Services\IWardobeContract.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005041712101_created database.resx">
       <DependentUpon>202005041712101_created database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131643507_edit table.resx">
+      <DependentUpon>202005131643507_edit table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -12,7 +12,7 @@ namespace WardobeLibrary.Models
     public class CategoriesDB
     {
         [Key]
-        private int id { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

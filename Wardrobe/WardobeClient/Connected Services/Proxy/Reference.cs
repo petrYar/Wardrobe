@@ -74,59 +74,136 @@ namespace WardobeClient.Proxy {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IAccountService")]
-    public interface IAccountService {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Clothes", Namespace="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses.Classes")]
+    [System.SerializableAttribute()]
+    public partial class Clothes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColorField, value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IAccountContract")]
+    public interface IAccountContract {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Login", ReplyAction="http://tempuri.org/IAccountContract/LoginResponse")]
         string Login([System.ServiceModel.MessageParameterAttribute(Name="login")] string login1, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Login", ReplyAction="http://tempuri.org/IAccountContract/LoginResponse")]
         System.Threading.Tasks.Task<string> LoginAsync(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Register", ReplyAction="http://tempuri.org/IAccountService/RegisterResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Register", ReplyAction="http://tempuri.org/IAccountContract/RegisterResponse")]
         void Register(WardobeClient.Proxy.Account account, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Register", ReplyAction="http://tempuri.org/IAccountService/RegisterResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Register", ReplyAction="http://tempuri.org/IAccountContract/RegisterResponse")]
         System.Threading.Tasks.Task RegisterAsync(WardobeClient.Proxy.Account account, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetInfo", ReplyAction="http://tempuri.org/IAccountService/GetInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/GetInfo", ReplyAction="http://tempuri.org/IAccountContract/GetInfoResponse")]
         WardobeClient.Proxy.Account GetInfo(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetInfo", ReplyAction="http://tempuri.org/IAccountService/GetInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/GetInfo", ReplyAction="http://tempuri.org/IAccountContract/GetInfoResponse")]
         System.Threading.Tasks.Task<WardobeClient.Proxy.Account> GetInfoAsync(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Disconnect", ReplyAction="http://tempuri.org/IAccountService/DisconnectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Disconnect", ReplyAction="http://tempuri.org/IAccountContract/DisconnectResponse")]
         void Disconnect(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Disconnect", ReplyAction="http://tempuri.org/IAccountService/DisconnectResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountContract/Disconnect", ReplyAction="http://tempuri.org/IAccountContract/DisconnectResponse")]
         System.Threading.Tasks.Task DisconnectAsync(string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAccountServiceChannel : WardobeClient.Proxy.IAccountService, System.ServiceModel.IClientChannel {
+    public interface IAccountContractChannel : WardobeClient.Proxy.IAccountContract, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AccountServiceClient : System.ServiceModel.ClientBase<WardobeClient.Proxy.IAccountService>, WardobeClient.Proxy.IAccountService {
+    public partial class AccountContractClient : System.ServiceModel.ClientBase<WardobeClient.Proxy.IAccountContract>, WardobeClient.Proxy.IAccountContract {
         
-        public AccountServiceClient() {
+        public AccountContractClient() {
         }
         
-        public AccountServiceClient(string endpointConfigurationName) : 
+        public AccountContractClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public AccountServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public AccountContractClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AccountServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public AccountContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AccountServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public AccountContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -160,6 +237,53 @@ namespace WardobeClient.Proxy {
         
         public System.Threading.Tasks.Task DisconnectAsync(string token) {
             return base.Channel.DisconnectAsync(token);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Proxy.IWardobeContract")]
+    public interface IWardobeContract {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWardobeContract/GetClothes", ReplyAction="http://tempuri.org/IWardobeContract/GetClothesResponse")]
+        WardobeClient.Proxy.Clothes[] GetClothes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWardobeContract/GetClothes", ReplyAction="http://tempuri.org/IWardobeContract/GetClothesResponse")]
+        System.Threading.Tasks.Task<WardobeClient.Proxy.Clothes[]> GetClothesAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IWardobeContractChannel : WardobeClient.Proxy.IWardobeContract, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class WardobeContractClient : System.ServiceModel.ClientBase<WardobeClient.Proxy.IWardobeContract>, WardobeClient.Proxy.IWardobeContract {
+        
+        public WardobeContractClient() {
+        }
+        
+        public WardobeContractClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public WardobeContractClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public WardobeContractClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public WardobeContractClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public WardobeClient.Proxy.Clothes[] GetClothes() {
+            return base.Channel.GetClothes();
+        }
+        
+        public System.Threading.Tasks.Task<WardobeClient.Proxy.Clothes[]> GetClothesAsync() {
+            return base.Channel.GetClothesAsync();
         }
     }
 }

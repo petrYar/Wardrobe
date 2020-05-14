@@ -10,7 +10,7 @@ namespace WardobeHost
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(WardobeLibrary.WCFClasses.AccountService)))
+            using (ServiceHost host = new ServiceHost(typeof(WardobeLibrary.WCFClasses.Service)))
             {
                 host.Open();
                 Console.WriteLine("Host started!");

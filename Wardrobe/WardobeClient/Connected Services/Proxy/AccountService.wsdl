@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WardobeLibrary.WCFClasses.Classes" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IAccountService_Login_InputMessage">
+  <wsdl:message name="IAccountContract_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_Login_OutputMessage">
+  <wsdl:message name="IAccountContract_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_Register_InputMessage">
+  <wsdl:message name="IAccountContract_Register_InputMessage">
     <wsdl:part name="parameters" element="tns:Register" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_Register_OutputMessage">
+  <wsdl:message name="IAccountContract_Register_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_GetInfo_InputMessage">
+  <wsdl:message name="IAccountContract_GetInfo_InputMessage">
     <wsdl:part name="parameters" element="tns:GetInfo" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_GetInfo_OutputMessage">
+  <wsdl:message name="IAccountContract_GetInfo_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_Disconnect_InputMessage">
+  <wsdl:message name="IAccountContract_Disconnect_InputMessage">
     <wsdl:part name="parameters" element="tns:Disconnect" />
   </wsdl:message>
-  <wsdl:message name="IAccountService_Disconnect_OutputMessage">
+  <wsdl:message name="IAccountContract_Disconnect_OutputMessage">
     <wsdl:part name="parameters" element="tns:DisconnectResponse" />
   </wsdl:message>
-  <wsdl:portType name="IAccountService">
+  <wsdl:message name="IWardobeContract_GetClothes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClothes" />
+  </wsdl:message>
+  <wsdl:message name="IWardobeContract_GetClothes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClothesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccountContract">
     <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/Login" message="tns:IAccountService_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/LoginResponse" message="tns:IAccountService_Login_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountContract/Login" message="tns:IAccountContract_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountContract/LoginResponse" message="tns:IAccountContract_Login_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Register">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/Register" message="tns:IAccountService_Register_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/RegisterResponse" message="tns:IAccountService_Register_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountContract/Register" message="tns:IAccountContract_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountContract/RegisterResponse" message="tns:IAccountContract_Register_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetInfo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetInfo" message="tns:IAccountService_GetInfo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetInfoResponse" message="tns:IAccountService_GetInfo_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountContract/GetInfo" message="tns:IAccountContract_GetInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountContract/GetInfoResponse" message="tns:IAccountContract_GetInfo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Disconnect">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/Disconnect" message="tns:IAccountService_Disconnect_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/DisconnectResponse" message="tns:IAccountService_Disconnect_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountContract/Disconnect" message="tns:IAccountContract_Disconnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountContract/DisconnectResponse" message="tns:IAccountContract_Disconnect_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IAccountService" type="tns:IAccountService">
+  <wsdl:portType name="IWardobeContract">
+    <wsdl:operation name="GetClothes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWardobeContract/GetClothes" message="tns:IWardobeContract_GetClothes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWardobeContract/GetClothesResponse" message="tns:IWardobeContract_GetClothes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAccountContract" type="tns:IAccountContract">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/IAccountService/Login" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IAccountContract/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,7 +74,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Register">
-      <soap:operation soapAction="http://tempuri.org/IAccountService/Register" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IAccountContract/Register" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -70,7 +83,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetInfo">
-      <soap:operation soapAction="http://tempuri.org/IAccountService/GetInfo" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IAccountContract/GetInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -79,7 +92,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Disconnect">
-      <soap:operation soapAction="http://tempuri.org/IAccountService/Disconnect" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IAccountContract/Disconnect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -88,9 +101,24 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="AccountService">
-    <wsdl:port name="BasicHttpBinding_IAccountService" binding="tns:BasicHttpBinding_IAccountService">
+  <wsdl:binding name="BasicHttpBinding_IWardobeContract" type="tns:IWardobeContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClothes">
+      <soap:operation soapAction="http://tempuri.org/IWardobeContract/GetClothes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IAccountContract" binding="tns:BasicHttpBinding_IAccountContract">
       <soap:address location="http://localhost:8733/Design_Time_Addresses/Authorization" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IWardobeContract" binding="tns:BasicHttpBinding_IWardobeContract">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/Wardobe" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

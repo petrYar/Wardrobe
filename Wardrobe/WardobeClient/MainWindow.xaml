@@ -31,11 +31,17 @@
                 <RadioButton x:Name="rbBlack" Content="Black" Margin="10" Background="Black"/>
                 
                 <CheckBox Name="cbHat" Content="Hat" IsChecked="True" Margin="10"/>
-                <Button x:Name="btnPickUpClothes" Content="Pick up clothes" Margin="10 30"/>
+                <Button x:Name="btnPickUpClothes" Click="btnPickUpClothes_Click" Content="Pick up clothes" Margin="10 30"/>
             </StackPanel>
         </GroupBox>
-        <ListView x:Name="lvClothes" Grid.Column="1">
-            
-        </ListView>
+        
+        <DataGrid x:Name="dgClothes" Grid.Column="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="text" Binding="{Binding Name}"  />
+                <DataGridTextColumn Binding="{Binding Color}"  />
+                <DataGridTextColumn Binding="{Binding Discription}"  />
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </Window>
