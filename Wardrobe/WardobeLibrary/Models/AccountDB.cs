@@ -20,7 +20,6 @@ namespace WardobeLibrary.Models
         [Required]
         public string Password { get; set; }
 
-        [Required]
         public string Token { get; set; }
 
         //[ForeignKey("ClothesOf")]

@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202005141256218_asf.designer.cs">
       <DependentUpon>202005141256218_asf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005141331170_removed Required.cs" />
+    <Compile Include="Migrations\202005141331170_removed Required.designer.cs">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDB.cs" />
     <Compile Include="Models\CategoriesDB.cs" />
@@ -99,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005141256218_asf.resx">
       <DependentUpon>202005141256218_asf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141331170_removed Required.resx">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
