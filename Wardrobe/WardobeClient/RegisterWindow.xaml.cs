@@ -29,9 +29,9 @@ namespace WardobeClient
             WardobeClient.Proxy.AccountServiceClient client = new WardobeClient.Proxy.AccountServiceClient();
             WardobeClient.Proxy.Account account = new WardobeClient.Proxy.Account()
             {
-                UserName = txtUserName.Text
+                UserName = txtUserName.Text,
             };
-            client.RegisterAsync(account, txtPassword.Text);
+            client.RegisterAsync(account,pbPassword.Password);
 
             this.Close();
         }

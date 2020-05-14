@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:WardobeClient"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="420"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,11 +17,11 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="LightBlue">
-        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="23" Margin="44,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="316"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="30" Margin="44,65,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="316"/>
         <PasswordBox  x:Name="PasswordBox"  materialDesign:HintAssist.Hint="Password"  materialDesign:TextFieldAssist.HasClearButton="True"  materialDesign:HintAssist.HelperText="At least 8 characters"  HorizontalAlignment="Left" Height="23" Margin="44,181,0,0"   VerticalAlignment="Top" Width="316"/>
-        <!--<PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="44,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="316"/>-->
+        
         <Label Content="Login" HorizontalAlignment="Left" Margin="44,41,0,0" VerticalAlignment="Top"/>
-       
+
         <Label Content="Password" HorizontalAlignment="Left" Margin="44,150,0,0" VerticalAlignment="Top"/>
         <Button Click="Button_Click" Content="Sign in"  Cursor="Hand" FontSize="16" HorizontalAlignment="Left" Margin="124,263,0,0" VerticalAlignment="Top" Width="156" Height="39"/>
         <Button Click="Button_Click_1" Content="Sign up" BorderThickness="0" Cursor="Hand" Background="Transparent" FontSize="16" HorizontalAlignment="Left" Margin="124,344,0,0" VerticalAlignment="Top" Width="156" Height="36"/>

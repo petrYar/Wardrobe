@@ -4,42 +4,71 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using WardobeLibrary.Models;
 
 namespace WardobeLibrary.WCFClasses
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class AccountService : IAccountService
     {
-        public List<Account> Accounts = new List<Account>();
 
         public void Disconnect(string token)
         {
-            Accounts.FirstOrDefault(t => t.Token == token).Token = null;
+            using (EFContext context = new EFContext())
+            {
+                context.Accounts.FirstOrDefault(x => x.Token == token).Token = string.Empty;
+                context.SaveChanges();
+            }
         }
 
         public Account GetInfo(string token)
         {
-            var loginedUser = Accounts.FirstOrDefault(t => t.Token == token);
-            return loginedUser;
+            using (EFContext context = new EFContext())
+            {
+                var account = context.Accounts.FirstOrDefault(x => x.Token == token);
+                var list = account.ClothesOf.Select(name => name.Name);
+
+                return new Account() { Clothes = list.ToList(), Id = account.Id, Password = account.Password, UserName = account.UserName };
+            }
+
         }
 
-        public void Register(Account account, string password)
+        public bool Register(Account account, string password)
         {
+<<<<<<< HEAD
             //account.IdGuid = Guid.NewGuid().ToString();
             account.Password = password;
             this.Accounts.Add(account);
+=======
+            using (var context = new EFContext())
+            {
+                if (context.Accounts.FirstOrDefault(x => x.Password == account.Password && x.UserName == account.UserName) != null)
+                {
+                    return false;
+                }
+                context.Accounts.Add(new AccountDB()
+                { UserName = account.UserName, Password = password, Token = string.Empty });
+
+                context.SaveChanges();
+                return true;
+            }
+>>>>>>> develop
         }
 
-        public string Login(string login, string password)
+        public bool Login(string login, string password)
         {
-            var loginedUser = this.Accounts.FirstOrDefault(t => t.UserName == login && t.Password == password);
-            if (loginedUser != null)
+            using (EFContext context = new EFContext())
             {
-                string token = Guid.NewGuid().ToString();
-                this.Accounts.FirstOrDefault(t => t == loginedUser).Token = token;
-                return token;
+                var token = Guid.NewGuid().ToString();
+
+                if (context.Accounts.FirstOrDefault(x => x.UserName == login && x.Password == password) != null)
+                {
+                    context.Accounts.FirstOrDefault(x => x.UserName == login && x.Password == password).Token = token;
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            return null;
         }
     }
 }

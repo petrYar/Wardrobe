@@ -6,17 +6,38 @@
         xmlns:local="clr-namespace:WardobeClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="609*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Header="Choose main color:">
+            <StackPanel >
+                <RadioButton x:Name="rbYellow" Content="Yellow" Margin="10" Foreground="Yellow" />
+                <RadioButton x:Name="rbPurple" Content="Purple" Margin="10" Foreground="MediumPurple"/>
+                <RadioButton x:Name="rbRed" Content="Red" Margin="10" Foreground="Red"/>
+                <RadioButton x:Name="rbBlue" Content="Blue" Margin="10" Foreground="RoyalBlue"/>
+                <RadioButton x:Name="rbGreen" Content="Green" Margin="10" Foreground="Green"/>
+                <RadioButton x:Name="rbWhite" Content="White" Margin="10" Foreground="Gray"/>
+                <RadioButton x:Name="rbBlack" Content="Black" Margin="10" Background="Black"/>
+
+                <CheckBox Name="cbHat" Content="Hat" IsChecked="True" Margin="10"/>
+                <Button x:Name="btnPickUpClothes" Content="Pick up clothes" Margin="10 30"/>
+            </StackPanel>
+        </GroupBox>
+        <ListView x:Name="lvClothes" Grid.Column="1">
+
+        </ListView>
     </Grid>
 </Window>

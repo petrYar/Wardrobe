@@ -64,6 +64,22 @@
     <Compile Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.designer.cs">
       <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005121801126_edited classe.cs" />
+    <Compile Include="Migrations\202005121801126_edited classe.designer.cs">
+      <DependentUpon>202005121801126_edited classe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005131649421_edited tables.cs" />
+    <Compile Include="Migrations\202005131649421_edited tables.designer.cs">
+      <DependentUpon>202005131649421_edited tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005141256218_asf.cs" />
+    <Compile Include="Migrations\202005141256218_asf.designer.cs">
+      <DependentUpon>202005141256218_asf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005141331170_removed Required.cs" />
+    <Compile Include="Migrations\202005141331170_removed Required.designer.cs">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountDB.cs" />
     <Compile Include="Models\CategoriesDB.cs" />
@@ -79,9 +95,15 @@
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Response.cs" />
     <Compile Include="WCFClasses\Classes\ResponseFromWeatherSite\Weather.cs" />
     <Compile Include="WCFClasses\Services\AccountService.cs" />
+<<<<<<< HEAD
     <Compile Include="WCFClasses\Services\IAccountService.cs" />
     <Compile Include="WCFClasses\Services\IWardobeService.cs" />
     <Compile Include="WCFClasses\Services\WardrobeService.cs" />
+=======
+    <Compile Include="WCFClasses\Services\IAccountContract.cs" />
+    <Compile Include="WCFClasses\Services\IWardobeContract.cs" />
+    <Compile Include="WCFClasses\Services\WardobeService.cs" />
+>>>>>>> develop
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -93,6 +115,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.resx">
       <DependentUpon>202005131832416_Renaming Current to Daily. Now weather is for each hour, not for current time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005121801126_edited classe.resx">
+      <DependentUpon>202005121801126_edited classe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131649421_edited tables.resx">
+      <DependentUpon>202005131649421_edited tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141256218_asf.resx">
+      <DependentUpon>202005141256218_asf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005141331170_removed Required.resx">
+      <DependentUpon>202005141331170_removed Required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
