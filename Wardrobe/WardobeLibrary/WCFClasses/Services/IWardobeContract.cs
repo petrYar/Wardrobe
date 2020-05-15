@@ -21,12 +21,10 @@ namespace WardrobeLibrary.WCFClasses
 
         DateTime DateTimeFromDT(int dt);
 
-        DateTime Weather_GetDateTime(DateTime time);
+        //DateTime Weather_GetDateTime(DateTime time);
         double Weather_GetTemperature(DateTime time);
         double Weather_GetFeelsLike(DateTime time);
         double Weather_GetWindSpeed(DateTime time);
         string[] Weather_GetClouds(DateTime time);
-
-        Daily GetDailyOnTime(DateTime time);
     }
 }
