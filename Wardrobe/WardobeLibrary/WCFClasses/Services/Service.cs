@@ -75,7 +75,8 @@ namespace WardobeLibrary.WCFClasses
 
         public List<Clothes> WhatToWear()
         {
-            double temperature = Weather_GetTemperature(DateTime.Now.Hour);
+            //On temperature
+            double temperature = Weather_GetTemperature(DateTime.Now);
 
             using (EFContext con = new EFContext())
             {
