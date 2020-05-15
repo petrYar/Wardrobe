@@ -136,7 +136,7 @@ namespace WardobeLibrary.WCFClasses
             //daily     Historical weather data for 5 previous days
             string part = "hourly";
 
-            WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/onecall?lat={latitude}&lon={longitude}&exclude={part}&appid={id}&units=metric");
+            WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/onecall?lat={latitude}&lon={longitude}&exclude={part}&appid={api}&units=metric");
             WebResponse response = request.GetResponse();
             using (Stream stream = response.GetResponseStream())
             {
@@ -168,46 +168,59 @@ namespace WardobeLibrary.WCFClasses
             return dtDateTime;
         }
 
-        public DateTime Weather_GetDateTime(int hour)
+        //NOT NECESSARY
+        //public DateTime Weather_GetDateTime(DateTime date)
+        //{
+        //    using (EFContext con = new EFContext())
+        //    {
+        //        return DateTimeFromDT(
+        //            con.Weather.FirstOrDefault(
+        //                x => x.Weather.FirstOrDefault(
+        //                    t => DateTimeFromDT(t.DateTime) == date)).Weather[hour].DateTime);
+        //    }
+        //}
+        public double Weather_GetTemperature(DateTime time)
         {
             using (EFContext con = new EFContext())
             {
-                return DateTimeFromDT(con.Weather.Weather[hour].DateTime);
+                return GetDailyOnTime(time).Temperature;
             }
         }
-        public double Weather_GetTemperature(int hour)
+        public double Weather_GetFeelsLike(DateTime time)
         {
             using (EFContext con = new EFContext())
             {
-                return con.Weather.Weather[hour].Temperature;
+                return GetDailyOnTime(time).Feels_like;
             }
         }
-        public double Weather_GetFeelsLike(int hour)
+        public double Weather_GetWindSpeed(DateTime time)
         {
             using (EFContext con = new EFContext())
             {
-                return con.Weather.Weather[hour].Feels_like;
+                return GetDailyOnTime(time).Wind_speed;
             }
         }
-        public double Weather_GetWindSpeed(int hour)
-        {
-            using (EFContext con = new EFContext())
-            {
-                return con.Weather.Weather[hour].Wind_speed;
-            }
-        }
-        public string[] Weather_GetClouds(int hour)
+        public string[] Weather_GetClouds(DateTime time)
         {//Info about statement of the sky
             using (EFContext con = new EFContext())
             {
                 string[] texts = { };
                 int i = 0;
-                foreach (var item in con.Weather.Weather[hour].WeatherInfo)
+                foreach (var item in GetDailyOnTime(time).WeatherInfo)
                 {
                     texts[i] = item.Main;
                     i++;
                 }
                 return texts;
+            }
+        }
+
+        private Daily GetDailyOnTime (DateTime time)
+        {
+            using (EFContext con = new EFContext())
+            {
+                return con.Weather.FirstOrDefault(
+                    x => DateTimeFromDT(x.Weather[time.Hour].DateTime) == time).Weather[time.Hour];
             }
         }
     }

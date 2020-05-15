@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using WardobeLibrary.WCFClasses.Classes;
+using WardobeLibrary.WCFClasses.Classes.ResponseFromWeatherSite;
 
 namespace WardrobeLibrary.WCFClasses
 {
@@ -20,10 +21,12 @@ namespace WardrobeLibrary.WCFClasses
 
         DateTime DateTimeFromDT(int dt);
 
-        DateTime Weather_GetDateTime(int hour);
-        double Weather_GetTemperature(int hour);
-        double Weather_GetFeelsLike(int hour);
-        double Weather_GetWindSpeed(int hour);
-        string[] Weather_GetClouds(int hour);
+        DateTime Weather_GetDateTime(DateTime time);
+        double Weather_GetTemperature(DateTime time);
+        double Weather_GetFeelsLike(DateTime time);
+        double Weather_GetWindSpeed(DateTime time);
+        string[] Weather_GetClouds(DateTime time);
+
+        Daily GetDailyOnTime(DateTime time);
     }
 }
